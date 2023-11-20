@@ -1,40 +1,72 @@
-.dropdown_button_container{
-    /* border: 2px solid black; */
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    flex-wrap: wrap;
-    /* background-color: white; */
+.dropdown_button_container {
+  /* border: 2px solid black; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+  /* background-color: white; */
 }
 
-.dropdown_button{
-    border: 2px solid black;
-    border-radius: 10px;
-    width: 150px;
-    height: 50px;
-    text-align: left;
-    display: flex;
-    justify-content: space-between;
-    text-align: center;
-    background-color: white;
+.dropdown_button {
+  border: 2px solid black;
+  border-radius: 10px;
+  width: 150px;
+  height: 50px;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  background-color: white;
+
+  &:hover {
+    background-color: gray;
+  }
 }
 
-.button_name{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 20px;
-    font-weight: 450;
-    margin-top: 10px;
-    margin-left: 10px;
+.button_name {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 20px;
+  font-weight: 450;
+  margin-top: 10px;
+  margin-left: 10px;
 }
 
-.dropdown_toggle_down_arrow{
-    height: 40px;
-    width: 35px;
-    margin-top: 5px;
+.dropdown_toggle_down_arrow {
+  height: 40px;
+  width: 35px;
+  margin-top: 5px;
 }
 
-.dropdown_toggle_left_arrow{
-    height: 35px;
-    width: 40px;
-    margin-top: 5px;
+.dropdown_toggle_left_arrow {
+  height: 35px;
+  width: 40px;
+  margin-top: 5px;
+}
+
+.dropdown_option_list {
+  /* margin-left: 20px; */
+  margin-top: 2.5px;
+  margin-left: 2.5px;
+  list-style: none;
+  /* border-radius: 10px;
+    border: 2px solid black; */
+  width: 150px;
+}
+
+.animation_effect {
+  animation: growDown 300ms ease-in-out forwards;
+  transform-origin: top center;
+}
+
+@keyframes growDown {
+  0% {
+    transform: scaleY(0);
+  }
+  80% {
+    transform: scaleY(1.1);
+  }
+  100% {
+    transform: scaleY(1);
+  }
 }
