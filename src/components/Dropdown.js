@@ -2,13 +2,12 @@ import { useState } from "react";
 
 import styles from "../styles/dropdown.module.css";
 import DropdownOption from "./DropdownOption";
-import { DROP_DOWN_OPTIONS } from "../utils";
 
 // This is a class or a functional component which will show the dropdown options on hovering it.
 // Will close the dropdown when a option of the dropdown is clicked
 // Will get the required options for dropdown as arguments and not to be harcoded
 
-function Dropdown() {
+function Dropdown({ options }) {
   // Creating a state to capture the hovering event of the dropdown component
   const [isHovering, setIsHovering] = useState(false);
 
@@ -58,7 +57,7 @@ function Dropdown() {
           onMouseOverCapture={onHover}
           onMouseOutCapture={onAway}
         >
-          {DROP_DOWN_OPTIONS.map((option) => (
+          {options.map((option) => (
             <li className={styles.dropdown_option} onClick={onAway}>
               <DropdownOption name={option} />
             </li>

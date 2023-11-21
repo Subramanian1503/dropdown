@@ -11,6 +11,7 @@
   /* border-radius: 10px; */
   font-size: 20px;
   font-weight: 450;
+  cursor: pointer;
 
   &:hover {
     background-color: gray;
