@@ -9,7 +9,7 @@ import DropdownOption from "./DropdownOption";
 // Will close the dropdown when a option of the dropdown is clicked
 // Will get the required options for dropdown as arguments and not to be harcoded
 
-function Dropdown({ dropdownOptions }) {
+function Dropdown({ dropdownOptions, dropdownName }) {
   // Creating a state to capture the hovering event of the dropdown component
   const [isHovering, setIsHovering] = useState(false);
 
@@ -35,7 +35,7 @@ function Dropdown({ dropdownOptions }) {
         onMouseOutCapture={onAway}
       >
         {/* name of  the drop down button */}
-        <span className={styles.button_name}>Navigate</span>
+        <span className={styles.button_name}>{dropdownName}</span>
 
         {/* toggling the arrows based on the mouse state */}
         <span>
