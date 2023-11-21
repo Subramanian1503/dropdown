@@ -1,6 +1,8 @@
-import styles from "../styles/dropdown.module.css";
 import { useState } from "react";
+
+import styles from "../styles/dropdown.module.css";
 import DropdownOption from "./DropdownOption";
+import { DROP_DOWN_OPTIONS } from "../utils";
 
 // This is a class or a functional component which will show the dropdown options on hovering it.
 // Will close the dropdown when a option of the dropdown is clicked
@@ -30,7 +32,7 @@ function Dropdown() {
         onMouseOutCapture={onAway}
       >
         {/* name of  the drop down button */}
-        <span className={styles.button_name}>Select</span>
+        <span className={styles.button_name}>Navigate</span>
 
         {/* toggling the arrows based on the mouse state */}
         <span>
@@ -56,15 +58,11 @@ function Dropdown() {
           onMouseOverCapture={onHover}
           onMouseOutCapture={onAway}
         >
-          <li className={styles.dropdown_option} onClick={onAway}>
-            <DropdownOption />
-          </li>
-          <li className={styles.dropdown_option} onClick={onAway}>
-            <DropdownOption />
-          </li>
-          <li className={styles.dropdown_option} onClick={onAway}>
-            <DropdownOption />
-          </li>
+          {DROP_DOWN_OPTIONS.map((option) => (
+            <li className={styles.dropdown_option} onClick={onAway}>
+              <DropdownOption name={option} />
+            </li>
+          ))}
         </ul>
       )}
     </div>
