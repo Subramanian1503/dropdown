@@ -1,5 +1,7 @@
+// React library dependencies required to construct the Dropdown Component
 import { useState } from "react";
 
+// Internal dependent files required to run the Dropdown component
 import styles from "../styles/dropdown.module.css";
 import DropdownOption from "./DropdownOption";
 
@@ -7,7 +9,7 @@ import DropdownOption from "./DropdownOption";
 // Will close the dropdown when a option of the dropdown is clicked
 // Will get the required options for dropdown as arguments and not to be harcoded
 
-function Dropdown({ options }) {
+function Dropdown({ dropdownOptions }) {
   // Creating a state to capture the hovering event of the dropdown component
   const [isHovering, setIsHovering] = useState(false);
 
@@ -24,7 +26,9 @@ function Dropdown({ options }) {
   };
 
   return (
+    // Dropdown button container
     <div className={styles.dropdown_button_container}>
+      {/* Dropdown button */}
       <div
         className={styles.dropdown_button}
         onMouseOverCapture={onHover}
@@ -50,6 +54,7 @@ function Dropdown({ options }) {
           )}
         </span>
       </div>
+
       {/* dropdown options to be displayed while hovering */}
       {isHovering && (
         <ul
@@ -57,7 +62,8 @@ function Dropdown({ options }) {
           onMouseOverCapture={onHover}
           onMouseOutCapture={onAway}
         >
-          {options.map((option) => (
+          {/* list of dropdown options that needs to be displayed */}
+          {dropdownOptions.map((option) => (
             <li className={styles.dropdown_option} onClick={onAway}>
               <DropdownOption name={option} />
             </li>
@@ -68,4 +74,5 @@ function Dropdown({ options }) {
   );
 }
 
+// Exporting the component so that it can be used by other components
 export default Dropdown;
